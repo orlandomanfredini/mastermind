@@ -3,8 +3,12 @@
 const valueInput = document.getElementById('number-player');
 
 let outputResult = document.querySelector('.result')
+
+let positionCorrect = document.querySelector('.result-number')
 // ARRAY VUOTA DA RIEMPIRE CON NUMERI RANDOM
 let correctNumbers = generateArrayUnicNumber(4);
+
+
 
 // CREO COLLEGAMENTO CON BOTTONE CHE GENERA NUMERI
 const btnStart = document.getElementById('play')
@@ -31,12 +35,24 @@ btnStart.addEventListener('click', function(){
         
         if(correctNumbers.includes(userNumber)) {
             countCorrectNumbers++;
+            outputResult.innerHTML = countCorrectNumbers
 
             if(correctNumbers.indexOf(userNumber) === index) {
                 countCorrectPositions++
+                positionCorrect.innerHTML = countCorrectPositions
             }         
         }
+        
     }
+    
+    
+    
+
+
+    
+    
+    
+    
      
     
     // let numberValue = valueInput.value;
@@ -137,3 +153,7 @@ function confrontTwoArray (array1, array2){
 
    
 }
+
+// FUNZIONE CHE MI DICE CHE SEQUENZA HO INDOVINATO
+
+
